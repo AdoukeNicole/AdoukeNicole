@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href={{ asset("CSS/main.css") }}>
+    <link rel="stylesheet" href="{{ asset("CSS/main.css") }}" >
     <title>Custom Authentication</title>
      <!-- CSS only -->
      <style>
 
         center{
             padding: 10px;
-            margin: 93px;
+            margin: 103px;
            
         }
         form label{
@@ -28,9 +28,10 @@
 
         .control{
             width: 540px;
-            height: 50px;
-            background: transparent;
-            border-radius: 10px;
+            height: 60px;
+            background: #fff;
+            border-radius: 5px;
+            border: 1px solid #c4c4c4;
             outline: none;
             padding: 0 10px;
             font-size: 20px;
@@ -42,6 +43,7 @@
             height: 100%;
             position: relative;
         }
+
         input:focus+label,
         input:valid+label{
             font-size: 15px;
@@ -61,11 +63,12 @@
 
         .grand{
             background-color: #fff;
-            width: 700px;
-            height: 700px;
-            border-radius: 10px;
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-            
+            width: 600px;
+            height: 300px;
+            border-radius: 10px;
+            height: 500px;
+            width: 700px;
         }
 
         h1{
@@ -73,7 +76,7 @@
             font-family: 'Montserrat';
             font-style: normal;
             font-weight: 900;
-            font-size: 30px;
+            font-size: 48px;
             line-height: 59px;
             text-align: center;
             background-color: blueviolet;
@@ -84,12 +87,8 @@
 
         
          .lien{
-            color: black;
+                color: black;
                 font-size: 20px;
-                background: blueviolet;
-                color: #fff;
-                padding: 10px;
-                border-radius: 5px;
             }
 
                     
@@ -109,7 +108,7 @@
         }
 
         .bb{
-            margin-top: -610px;
+            margin-top: -400px;
         }
 
         
@@ -133,7 +132,8 @@
             <h2>MyShop</h2>
             <nav class="nav">
                 <ul>
-                    <li style="margin-right: 100px" class=""><a href="{{url('index')}}"><img src={{ asset("images/logouser.png") }} alt="" height="50"></a></li>
+                    <li class="li1"><a href="login">Login</a></li>
+                    <li class="li2"><a href="registration">Sigin</a></li>
                 </ul>
             </nav>
         </header> 
@@ -151,61 +151,43 @@
                 @endif
 
                 <center>
-                        <form action="{{url('save-product')}}" method="post" class="grand">
-                            <h1 class="popo">Veuillez fournir les informations de votre produit</h1>
+                        <form action="{{url('login-user')}}" method="post" class="grand">
+                            <h1 class="popo">Login</h1>
                             
                             @csrf
                             <div class="group">
-                                <input type="text" class="control"  name="name" value="{{old('name')}}" required>
-                                <label for="">ProductName</label>  
+                                <input type="text" class="control"  name="email" value="{{old('email')}}" required>
+                                <label for="">Email</label>  
                             </div>
-                            @error('name')
-                        <div class="alert" role="alert">
-                            {{$message}}
-                        </div>
-                        @enderror
-                        <br>
+                            @error('email')
+                            <div class="alert alert-danger" role="alert">
+                                {{$message}}
+                            </div>
+                            @enderror
+                            <br>
                             <div class="bb">
                                 <div class="group">
-                                    <input type="text" class="control"  name="quantity" value="{{old('quantity')}}" required>
-                                    <label for="">Quantity</label>  
+                                    <input id="pass" type="text" class="control" placeholder="Enter password" name="password" value="{{old('password')}}" required>
+                                    <img id="eye"  class="pass" src="images/non-bar.png" onclick="changer()"  height="15" width="20.90" alt=""> 
                                 </div>
-                                @error('quantity')
-                            <div class="alert " role="alert">
-                                {{$message}}
-                            </div>
-                            @enderror
-                            <br>
+                                @error('password')
+                                <div class="alert alert-danger" role="alert">
+                                    {{$message}}
+                                </div>
+                                @enderror
                                 <div class="group">
-                                    <input type="text" class="control"  name="price" value="{{old('price')}}" required>
-                                    <label for="">Unit Price</label>  
+                                    <button class="btn" type="submit">Login</button><br><br>
+                                    <a class="lien" href="registration">New User!! Register Here</a>
                                 </div>
-                                @error('price')
-                            <div class="alert " role="alert">
-                                {{$message}}
-                            </div>
-                            @enderror
-                            <br>
-                            <div class="group">
-                                <input type="text" class="control"  name="Statut" value="{{old('Statut')}}" required>
-                                <label for="">Statut</label>  
-                            </div>
-                            @error('Statut')
-                            <div class="alert" role="alert">
-                                {{$message}}
-                            </div>
-                            @enderror
-                            <div class="group">
-                                <button class="btn" type="submit">Submit</button>
-                                <br><br>
-                                <a class="lien" href="product-list">Back</a>
-                            </div>
-                            
+                                <br>
+                                
                             </div>
                         </form>
                 </center>
 
         
+        </div>       
+        </div>
         <footer>
             <p class="p">&copy;2022 MyShop UI Kit.All rights reserved</p>
             <nav class="nav">
@@ -218,6 +200,20 @@
             </nav>
         </footer>
     </main>
-    
+    <script>
+        e=true;
+        function changer(){
+            if(e){
+                document.getElementById("pass").setAttribute("type","text");
+                document.getElementById("eye").src="images/non-bar.png";
+                e=false;
+            }else{
+                document.getElementById("pass").setAttribute("type","password");
+                document.getElementById("eye").src="images/bar.jpg";
+                e=true;
+            }
+                
+      }
+    </script>
 </body>
 </html>

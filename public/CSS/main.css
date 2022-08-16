@@ -1,0 +1,126 @@
+
+        body{
+            margin: 0px;
+        }
+        header{
+            
+            display: flex;
+            justify-content: space-between;
+            background-color: rgb(217, 217, 217);
+            padding: 15px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+        }
+
+        h2{
+            margin-left: 100px;
+        }
+
+        .h2{
+            margin-left: 150px;
+            margin-top: -25px;
+            border-radius: 10px;
+        }
+
+        .p{
+            margin-left: 100px;
+            margin-top: 25px;
+        }
+        ul{
+            display: flex;
+            margin-top: 27px;
+        }
+
+        li{
+            list-style: none;
+        }
+
+        a{
+            text-decoration: none;
+        }
+
+        .li1{
+            background-color: #f1eaff;
+            color: #bc30f5;
+            padding: 10px 20px;
+            border-radius: 10px;
+            margin-right: 10px;
+        }
+        
+
+        .li1 a{
+            color: #bc30f5;
+        }
+
+        .li2 a{
+            color: #f1eaff;
+        }
+        .li2{
+            background-color: #bc30f5;
+            color: #f1eaff;
+            padding: 10px 20px;
+            border-radius: 7px;
+            margin-right: 100px;
+        }
+
+        footer{
+            
+            display: flex;
+            justify-content: space-between;
+            background-color: black;
+            padding: 15px;
+            color: white;
+        }
+
+        .img{
+            margin-right: 100px;
+            border-radius: 15px;
+        }
+
+        .img1{
+            margin-right: 10px;
+            border-radius: 15px;
+        }
+
+
+            article{
+                display: flex;
+                background-color: #a1a1a1;
+            }
+
+            .image{
+                margin-right: 50px;
+            }
+            .div{
+                margin-left: 200px;
+            }
+            
+
+            .ecrit{
+                display: flex;
+                margin-top: 150px;
+                margin-right: -5px;
+            }
+           
+            .tof{
+                
+                border-radius: 15px;
+            }
+
+            .papa{
+                margin-right: 100px;
+            }
+
+            aside{
+            display: flex;
+            justify-content: space-between;
+            background-color: #f1e4ff;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            }
+
+            .h{
+                display: flex;
+                margin-top: 110px;
+                margin-left: 100px;
+            }
+           

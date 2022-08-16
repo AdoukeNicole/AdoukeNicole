@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TodoController;
+use App\Http\Controllers\ShopController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +24,13 @@ Route::post('/save-product', [TodoController::class, 'SaveProduct']);
 Route::get('/edit-product/{id}', [TodoController::class, 'EditProduct']);
 Route::post('/update-product', [TodoController::class, 'UpdateProduct']);
 Route::get('/delete-product/{id}', [TodoController::class, 'DeleteProduct']);
+
+//ShopKeeper
+
+Route::get('/login', [ShopController::class, 'login']);
+Route::get('/registration', [ShopController::class, 'registration']);
+Route::post('/register-user', [ShopController::class, 'RegisterUser']);
+Route::post('/login-user', [ShopController::class, 'LoginUser']);
+Route::get('/dashboard', [ShopController::class, 'dashboard']);
+Route::get('/log', [ShopController::class, 'log']);
+Route::get('/index', [ShopController::class, 'index']);

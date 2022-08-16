@@ -10,19 +10,21 @@ class TodoController extends Controller
     //Affichage de la page product-list
 
     public function index(){
-        $data = Gest::get();
+        $data = Gest::where('user_id',session()->get("LoginId"))->get();
         return view('product-list', compact('data'));
     }
 
     //  Affichage de la page add-product
 
     public function AddProduct(){
+        
         return view('add-product');
     }
 
     //Enregistrement des produits
 
     public function SaveProduct(Request $request){
+        
         //sans données pas de validation
         $request->validate([
             'name' => 'required',
@@ -40,9 +42,9 @@ class TodoController extends Controller
         $item->quantity = $qte;
         $item->price = $PU;
         $item->Statut=$statut;
+        $item->user_id=session()->get("LoginId");
         $item->save();
-
-        return back()->with(['success' => 'Product Added Succesffully']);
+        return redirect('product-list');
     }
 
     public function EditProduct($id){
@@ -58,6 +60,7 @@ class TodoController extends Controller
             'price' => 'required',
             'Statut'=>'required',
         ]);
+        
         $id = $request->id;
         $name = $request->name;
         $qte = $request->quantity;
@@ -71,11 +74,13 @@ class TodoController extends Controller
             'Statut'=>$statut
         ]);
 
-        return back()->with(['success' => 'Product Updated Succesffully']);
+        return redirect('product-list');
     }
 
     public function DeleteProduct($id){
         Gest::where('id','=',$id)->delete();
-        return back()->with(['success' => 'Product Deleted Succesffully']);
+        return back()->with(['success' => 'Product Deleted Succesfully']);
     }
+
+    
 }

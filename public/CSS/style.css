@@ -1,0 +1,302 @@
+.alert{
+    background: #bc30f5;
+    border-radius: 5px;
+    color: white;
+    height: 30px;
+    width: 510px;
+    margin-left: 500px;
+}
+
+
+.form-control{
+    width: 550px;
+    height: 40px;
+    background: none;
+    border: none;
+    margin-top: 30px;
+}
+
+.form-control1{
+    width: 550px;
+    height: 40px;
+    background: none;
+    margin-top: 30px;
+}
+
+.btn{
+    background-color: #bc30f5;
+    border: none;
+    padding: 15px;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-left: 250px;
+    width: 170px;
+}
+
+.btn:hover{
+    filter: brightness(1.1);
+}
+
+a{
+    text-decoration: none;
+    color: #bc30f5;
+    font-family: cursive;
+}
+
+h2{
+    font-family: cursive;
+}
+
+body{
+    margin: 0px;
+}
+header{
+    
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(217, 217, 217);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+}
+
+h2{
+    margin-left: 100px;
+}
+
+.p{
+    margin-left: 100px;
+    margin-top: 25px;
+}
+ul{
+    display: flex;
+    margin-top: 27px;
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+.li1 a{
+    color: #bc30f5;
+}
+
+.li2 a{
+    color: #f1eaff;
+}
+.li2{
+    background-color: #bc30f5;
+    color: #f1eaff;
+    padding: 10px 20px;
+    border-radius: 7px;
+    margin-right: 100px;
+}
+
+footer{
+            
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    padding: 10px;
+    color: white;
+    margin-top: 171px;
+   
+}
+
+.footer{
+            
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    padding: 10px;
+    color: white;
+    margin-top: 10px;
+   
+}
+
+.footer1{
+            
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    padding: 10px;
+    color: white;
+    margin-top: 100px;
+   
+}
+
+
+.img{
+    margin-right: 100px;
+    border-radius: 15px;
+}
+
+.img1{
+    margin-right: 10px;
+    border-radius: 15px;
+}
+
+form{
+    margin-left: 600px;
+    margin-top: 100px;
+    box-shadow: 2px 2px 2px 2px;
+    margin-right: 600px;
+    padding: 15px;
+}
+
+.form{
+    margin-left: 620px;
+    margin-top: 120px;
+    box-shadow: 2px 2px 2px 2px;
+    margin-right: 660px;
+    padding: 15px;
+    width: 604px;
+}
+
+
+.form2{
+    margin-left: 620px;
+    margin-top: 150px;
+    box-shadow: 2px 2px 2px 2px;
+    margin-right: 660px;
+    padding: 15px;
+    width: 604px;
+}
+
+main{
+    
+}
+
+.h2{
+    margin-left: 120px;
+    margin-top: 50px;
+}
+
+.head{
+    margin-left: 280px;
+    color: white;
+    padding: 5px;
+    margin-right: 50px;
+}
+
+
+.head1{
+    margin-left: 120px;
+    color: white;
+    padding: 5px;
+    
+}
+
+.pa{
+    background-color: #bc30f5; 
+    margin-left: px;
+    width: 610px;
+}
+
+.pat{
+    position: absolute;
+    padding: 5px;
+    width: 625px;
+    height: 60px;
+    background: #bc30f5;
+    box-shadow: 2px 0px 0px 2px;
+    border-radius: 10px 10px 0px 0px;
+    margin-left: 620px;
+    margin-top: -60px;
+   
+}
+
+
+.pat2{
+   
+    padding: 5px;
+   
+   
+    background: #bc30f5;
+    box-shadow: 2px 0px 0px 2px;
+    border-radius: 10px 10px 0px 0px;
+    margin-left: -17px;
+    margin-top: -60px;
+   
+}
+
+.pat1{
+    
+    position: absolute;
+    padding: 5px;
+    width: 689px;
+    height: 60px;
+    background: #bc30f5;
+    box-shadow: 2px 0px 0px 2px;
+    border-radius: 10px 10px 0px 0px;
+    margin-left: -15px;
+    margin-top: -80px;
+   
+}
+
+
+.pat2{
+    
+    position: absolute;
+    padding: 5px;
+    width: 624px;
+    height: 60px;
+    background: #bc30f5;
+    box-shadow: 2px 0px 0px 2px;
+    border-radius: 10px 10px 0px 0px;
+    margin-left: -15px;
+    margin-top: -80px;
+   
+}
+
+
+label{
+    font-size: 20px;
+}
+
+.lien{
+    margin-left: 240px;
+}
+
+.pass{
+    border-radius: 8px;
+    height: 20px;
+    margin-left: 470px;
+    margin-top: -70px;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+table{
+    text-indent: 100px;
+    margin-left: 80px;
+}
+
+.lili img{
+    border-radius: 50px;
+    margin-right: 400px;
+    margin-top: 20px;
+}
+.a1{
+    
+    width: 20px;
+    height: 48px;
+    margin: 20px;
+    top: 122px;
+    
+    background: #3DAB85;
+    border-radius: 5px;
+}
+
+.a2{
+width: 227px;
+height: 68px;
+top: 122px;
+background: #ED1A1A;
+border-radius: 5px;
+}

@@ -42,12 +42,14 @@
             height: 100%;
             position: relative;
         }
+
         input:focus+label,
         input:valid+label{
             font-size: 15px;
             top: 2px;
             background: white;
             padding: 5px;
+
         }
 
     .pass{
@@ -62,10 +64,9 @@
         .grand{
             background-color: #fff;
             width: 700px;
-            height: 700px;
+            height: 1100px;
             border-radius: 10px;
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-            
         }
 
         h1{
@@ -73,7 +74,7 @@
             font-family: 'Montserrat';
             font-style: normal;
             font-weight: 900;
-            font-size: 30px;
+            font-size: 48px;
             line-height: 59px;
             text-align: center;
             background-color: blueviolet;
@@ -86,10 +87,6 @@
          .lien{
             color: black;
                 font-size: 20px;
-                background: blueviolet;
-                color: #fff;
-                padding: 10px;
-                border-radius: 5px;
             }
 
                     
@@ -109,21 +106,39 @@
         }
 
         .bb{
-            margin-top: -610px;
+            margin-top: -980px;
         }
-
+       
         
         .alert{
             background: blueviolet;
             border-radius: 5px;
-            color: white;
-            height: 30px;
-            width: 670px;
+            color: #ffffff;
+            width: 650px;
+            height: 50px;
             padding: 10px;
            text-align: center;
            margin-left: 600px;
            margin-top: 20px;
            font-size: 28px;
+           border-radius: 10px;
+            outline: none;
+           
+}
+
+.alert1{
+            background: blueviolet;
+            border-radius: 5px;
+            color: white;
+            width: 540px;
+            height: 50px;
+            padding: 10px;
+           text-align: center;
+           margin-top: 20px;
+           font-size: 28px;
+           border-radius: 10px;
+            outline: none;
+           
 }
      </style>
 </head>
@@ -133,7 +148,8 @@
             <h2>MyShop</h2>
             <nav class="nav">
                 <ul>
-                    <li style="margin-right: 100px" class=""><a href="{{url('index')}}"><img src={{ asset("images/logouser.png") }} alt="" height="50"></a></li>
+                    <li class="li1"><a href="login">Login</a></li>
+                    <li class="li2"><a href="registration">Sigin</a></li>
                 </ul>
             </nav>
         </header> 
@@ -151,13 +167,13 @@
                 @endif
 
                 <center>
-                        <form action="{{url('save-product')}}" method="post" class="grand">
-                            <h1 class="popo">Veuillez fournir les informations de votre produit</h1>
+                        <form action="{{url('register-user')}}" method="post" class="grand">
+                            <h1 class="popo">Registration</h1>
                             
                             @csrf
                             <div class="group">
                                 <input type="text" class="control"  name="name" value="{{old('name')}}" required>
-                                <label for="">ProductName</label>  
+                                <label for="">Name</label>  
                             </div>
                             @error('name')
                         <div class="alert" role="alert">
@@ -167,45 +183,64 @@
                         <br>
                             <div class="bb">
                                 <div class="group">
-                                    <input type="text" class="control"  name="quantity" value="{{old('quantity')}}" required>
-                                    <label for="">Quantity</label>  
+                                    <input type="text" class="control"  name="surname" value="{{old('surname')}}" required>
+                                    <label for="">Surname</label>  
                                 </div>
-                                @error('quantity')
-                            <div class="alert " role="alert">
+                                @error('suename')
+                            <div class="alert1" role="alert">
                                 {{$message}}
                             </div>
                             @enderror
                             <br>
                                 <div class="group">
-                                    <input type="text" class="control"  name="price" value="{{old('price')}}" required>
-                                    <label for="">Unit Price</label>  
+                                    <input type="text" class="control"  name="email" value="{{old('email')}}" required>
+                                    <label for="">Email</label>  
                                 </div>
-                                @error('price')
-                            <div class="alert " role="alert">
+                                @error('email')
+                            <div class="alert1" role="alert">
                                 {{$message}}
                             </div>
                             @enderror
                             <br>
                             <div class="group">
-                                <input type="text" class="control"  name="Statut" value="{{old('Statut')}}" required>
-                                <label for="">Statut</label>  
+                                <input type="text" class="control"  name="phone" value="{{old('phone')}}" required>
+                                <label for="">Phone</label>  
                             </div>
-                            @error('Statut')
-                            <div class="alert" role="alert">
+                            @error('phone')
+                            <div class="alert1" role="alert">
+                                {{$message}}
+                            </div>
+                            @enderror
+                            <br>
+                            <div class="group">
+                                <input id="pass" type="text" class="control" placeholder="Enter password" name="password" value="{{old('password')}}" required>
+                                <img id="eye"  class="pass" src="images/non-bar.png" onclick="changer()"  height="15" width="20.90" alt=""> 
+                            </div>
+                            @error('password')
+                            <div class="alert1" role="alert">
+                                {{$message}}
+                            </div>
+                            @enderror
+                            <br>
+                            <div class="group">
+                                <input id="pass" type="text" class="control"  name="address" value="{{old('address')}}" required>
+                                <label for="">Address</label> 
+                            </div>
+                            @error('address')
+                            <div class="alert1" role="alert">
                                 {{$message}}
                             </div>
                             @enderror
                             <div class="group">
-                                <button class="btn" type="submit">Submit</button>
-                                <br><br>
-                                <a class="lien" href="product-list">Back</a>
-                            </div>
-                            
+                                <button class="btn" type="submit">Submit</button><br><br>
+                                <a class="lien" href="login">Already Registered!! Login Here</a>
                             </div>
                         </form>
                 </center>
 
         
+        </div>       
+        </div>
         <footer>
             <p class="p">&copy;2022 MyShop UI Kit.All rights reserved</p>
             <nav class="nav">
@@ -219,5 +254,20 @@
         </footer>
     </main>
     
+    <script>
+        e=true;
+        function changer(){
+            if(e){
+                document.getElementById("pass").setAttribute("type","text");
+                document.getElementById("eye").src="images/non-bar.png";
+                e=false;
+            }else{
+                document.getElementById("pass").setAttribute("type","password");
+                document.getElementById("eye").src="images/bar.jpg";
+                e=true;
+            }
+                
+      }
+    </script>
 </body>
 </html>
